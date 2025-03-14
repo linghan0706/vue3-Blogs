@@ -43,7 +43,11 @@
                         </a>
                     </div>
                     <div class="placeholder"
-                        :style="{ backgroundColor: item.isHovered ? item.hoverColor : item.color }"></div>
+                        :style="{ backgroundColor: item.isHovered ? item.hoverColor : item.color }">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img :src="item.background" :alt="item.title" class="img-fluid" style="border-radius: 8px;">
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -66,7 +70,8 @@ const cards = ref([
         ],
         color: '#e3f2fd',
         hoverColor: '#bbdefb',
-        isHovered: false
+        isHovered: false,
+        background: "https://haowallpaper.com/link/common/file/previewFileImg/16445290917318016"
     },
     {
         title: '开发工具',
@@ -79,7 +84,9 @@ const cards = ref([
         ],
         color: '#f3e5f5',
         hoverColor: '#e1bee7',
-        isHovered: false
+        isHovered: false,
+        background: "https://haowallpaper.com/link/common/file/previewFileImg/2553563dc8bc741c35c58267476b8d012553563dc8bc741c35c58267476b8d01"
+
     },
     {
         title: '设计资源',
@@ -91,7 +98,8 @@ const cards = ref([
         ],
         color: '#e8f5e9',
         hoverColor: '#c8e6c9',
-        isHovered: false
+        isHovered: false,
+        background: "https://haowallpaper.com/link/common/file/previewFileImg/15942630369381760"
     }
 ])
 
@@ -171,48 +179,53 @@ const removeDefaultFocusStyle = (event: Event) => {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    padding: 1.5rem;
 }
 
 .card {
     background: white;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 .card h2 {
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 1rem 0;
     color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .description {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+    color: #4a5568;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 .tools-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
 }
 
 .tool-link {
-    background-color: #f8f9fa;
+    background-color: #edf2ff;
     color: #3778FF;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 500;
     transition: all 0.3s ease;
     cursor: pointer;
 }
@@ -220,27 +233,55 @@ const removeDefaultFocusStyle = (event: Event) => {
 .tool-link:hover {
     background-color: #3778FF;
     color: white;
+    transform: translateY(-2px);
 }
 
 .placeholder {
     width: 100%;
-    height: 150px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
+    height: 240px;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .placeholder img {
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
+        padding: 1.5rem;
     }
 
     .search-bar {
         width: 100%;
+        max-width: none;
     }
 
     .nav-list {
-        gap: 1rem;
+        gap: 1.5rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1rem;
     }
 }
 </style>

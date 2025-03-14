@@ -5,7 +5,9 @@
       <div class="about-card">
         <div class="profile-section">
           <div class="profile-image">
-            <img src="/profile-placeholder.svg" alt="Profile" />
+            <img
+              src="https://tse3-mm.cn.bing.net/th/id/OIP-C.lc-ELYviUjd4Gg6KmgoXEAHaHa?w=206&h=206&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+              alt="Profile" />
           </div>
           <h2 class="profile-name">个人工具集</h2>
           <p class="profile-title">让生活更简单，工作更高效</p>
