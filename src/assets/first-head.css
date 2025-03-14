@@ -1,0 +1,98 @@
+.responsive-layout {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dee2e6;
+}
+.search-bar {
+  display: flex;
+  gap: 10px;
+  border-radius: 5px;
+}
+.search-bar input {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  outline: none;
+  /* 去掉点击时的默认外框 */
+}
+.search {
+  right: 0;
+  width: 37px;
+  cursor: pointer;
+  background-size: cover;
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+.nav-list {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  margin-right: 5px;
+  text-decoration: none;
+  color: #343a40;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+main {
+  padding: 20px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1 1 300px;
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #343a40;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.placeholder {
+  height: 100px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    align-items: flex-start;
+  }
+
+  .search-bar {
+    margin-bottom: 10px;
+  }
+
+  .nav ul {
+    align-items: flex-start;
+  }
+}
